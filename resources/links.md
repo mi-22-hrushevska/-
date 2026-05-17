@@ -3,7 +3,7 @@
 Щоб заглибитися в тему глибше, скористайтеся цими матеріалами:
 
 1. **🎬 Відеоматеріали:**
-   * [How 0S works in 3D / Як працює ОС]() — Візуалізація процесів на YouTube.
+   * [Як працює ОС](https://www.youtube.com/watch?v=GjNp0bBrjmU) — Візуалізація процесів на YouTube.
    * [Crash Course Computer Science: Operating Systems](https://www.youtube.com/watch?v=O5nskjZ_GoI) — Відомий англомовний курс від PBS з українськими субтитрами.
 
 2. **📖 Корисні статті:**
