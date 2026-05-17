@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Принципи роботи операційних систем</title>
+    <!-- Підключаємо твій стильний CSS -->
+    <link rel="stylesheet" href="styles/custom.css">
+    <style>
+        /* Додаткові стилі для інтерактивних елементів, яких не було в першій версії */
+        #cpu-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin: 10px 0;
+            height: 20px;
+            overflow: hidden;
+        }
+        #cpu-progress {
+            width: 0%;
+            height: 100%;
+            background-color: #3498db;
+            transition: width 0.2s ease;
+        }
+        .options-group button {
+            margin: 5px;
+            background-color: #34495e;
+        }
+        .options-group button:hover {
+            background-color: #2c3e50;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🖥️ Курс: Принципи роботи операційних систем</h1>
+        <p>Навчальний модуль для учнів 10–11 класів</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Вітаємо у навчальному модулі!</h2>
+            <p>Цей курс допоможе вам зазирнути "під капот" комп'ютера та зрозуміти, як саме одна велика програма — Операційна Система — змушує працювати залізо, програми та мережу як єдиний оркестр.</p>
+            <blockquote>
+                <strong>Очікувані результати:</strong> Після завершення модуля ви зможете самостійно аналізувати ефективність використання ресурсів комп'ютера, управляти процесами та працювати в командному рядку.
+            </blockquote>
+        </section>
+
+        <hr>
+
+        <!-- НАВІГАЦІЯ -->
+        <section>
+            <h2>🧭 Навігація по курсу</h2>
+            <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr style="background-color: #2c3e50; color: white;">
+                        <th style="padding: 10px; text-align: left;">Розділ</th>
+                        <th style="padding: 10px; text-align: left;">Опис матеріалів</th>
+                        <th style="padding: 10px; text-align: left;">Посилання</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px;"><strong>📖 Теорія</strong></td>
+                        <td style="padding: 10px;">Повний лекційний матеріал, архітектура ядра, процеси та пам'ять.</td>
+                        <td style="padding: 10px;"><a href="theory/main-content.md">Читати теорію</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px;"><strong>📚 Глосарій</strong></td>
+                        <td style="padding: 10px;">Ключові терміни (ядро, драйвер, переривання тощо).</td>
+                        <td style="padding: 10px;"><a href="theory/glossary.md">Дивитися терміни</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px;"><strong>💻 Практика</strong></td>
+                        <td style="padding: 10px;">Робота з Диспетчером завдань та Терміналом.</td>
+                        <td style="padding: 10px;"><a href="practice/tasks.md">Перейти до завдань</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px;"><strong>🔗 Ресурси</strong></td>
+                        <td style="padding: 10px;">Корисні відео, статті та симулятори.</td>
+                        <td style="padding: 10px;"><a href="resources/links.md">Додаткові матеріали</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- ІНТЕРАКТИВНИЙ БЛОК 1: СИМУЛЯТОР CPU -->
+        <section class="interactive-box">
+            <h2>⚡ Демонстрація: Симулятор завантаження CPU</h2>
+            <p>Натисніть кнопку, щоб запустити віртуальний "важкий" процес в ОС та подивитися, як планувальник завдань реагує на перевантаження системи.</p>
+            <button onclick="simulateCpuLoad()">Запустити процес 🚀</button>
+            <div id="cpu-container">
+                <div id="cpu-progress"></div>
+            </div>
+        </section>
+
+        <!-- ІНТЕРАКТИВНИЙ БЛОК 2: ТЕСТ -->
+        <section class="interactive-box">
+            <h2>🧪 Міні-тест для самоперевірки</h2>
+            
+            <div class="question-block" style="margin-bottom: 20px;">
+                <p><strong>Питання 1: Який компонент ОС безпосередньо взаємодіє з апаратним забезпеченням (залізом)?</strong></p>
+                <div class="options-group">
+                    <button onclick="checkAnswer('q1', 'А', 'Б')">А) Командна оболонка (Shell)</button>
+                    <button onclick="checkAnswer('q1', 'Б', 'Б')">Б) Ядро (Kernel)</button>
+                    <button onclick="checkAnswer('q1', 'В', 'Б')">В) Диспетчер завдань</button>
+                </div>
+                <div id="feedback-q1" class="feedback"></div>
+            </div>
+
+            <div class="question-block">
+                <p><strong>Питання 2: Якщо оперативна пам'ять (RAM) повністю заповнена, що використовує ОС?</strong></p>
+                <div class="options-group">
+                    <button onclick="checkAnswer('q2', 'А', 'А')">А) Віртуальну пам'ять / Файл підкачки</button>
+                    <button onclick="checkAnswer('q2', 'Б', 'А')">Б) Кеш процесора</button>
+                    <button onclick="checkAnswer('q2', 'В', 'А')">В) Файлову систему NTFS</button>
+                </div>
+                <div id="feedback-q2" class="feedback"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Підключаємо твій інтерактивний JavaScript -->
+    <script src="scripts/interactive.js"></script>
+</body>
+</html>
