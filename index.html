@@ -7,24 +7,16 @@
     <!-- Підключаємо твій стильний CSS -->
     <link rel="stylesheet" href="styles/custom.css">
     <style>
-        /* Додаткові стилі для інтерактивних елементів, яких не було в першій версії */
-        #cpu-container {
-            width: 100%;
-            background-color: #e0e0e0;
-            border-radius: 4px;
-            margin: 10px 0;
-            height: 20px;
-            overflow: hidden;
-        }
-        #cpu-progress {
-            width: 0%;
-            height: 100%;
-            background-color: #3498db;
-            transition: width 0.2s ease;
-        }
+        /* Стилі для покращеного інтерактивного тесту */
         .options-group button {
             margin: 5px;
             background-color: #34495e;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
         .options-group button:hover {
             background-color: #2c3e50;
@@ -32,6 +24,17 @@
         .feedback {
             font-weight: bold;
             margin-top: 10px;
+            min-height: 24px;
+        }
+        .question-block {
+            background-color: #fdfdfd;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .question-block p {
+            margin-top: 0;
         }
     </style>
 </head>
@@ -64,53 +67,40 @@
                         <th style="padding: 10px; text-align: left;">Посилання</th>
                     </tr>
                 </thead>
-                
                 <tbody>
-    <tr style="border-bottom: 1px solid #ddd;">
-        <td style="padding: 10px;"><strong>📖 Теорія</strong></td>
-        <td style="padding: 10px;">Повний лекційний матеріал, архітектура ядра, процеси та пам'ять.</td>
-        <!-- Було main-content.md, стало main-content.html -->
-        <td style="padding: 10px;"><a href="theory/main-content.html">Читати теорію</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ddd;">
-        <td style="padding: 10px;"><strong>📚 Глосарій</strong></td>
-        <td style="padding: 10px;">Ключові терміни (ядро, драйвер, переривання тощо).</td>
-        <!-- Було glossary.md, стало glossary.html -->
-        <td style="padding: 10px;"><a href="theory/glossary.html">Дивитися терміни</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ddd;">
-        <td style="padding: 10px;"><strong>💻 Практика</strong></td>
-        <td style="padding: 10px;">Робота з Диспетчером завдань та Терміналом.</td>
-        <!-- Було tasks.md, стало tasks.html -->
-        <td style="padding: 10px;"><a href="practice/tasks.html">Перейти до завдань</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ddd;">
-        <td style="padding: 10px;"><strong>🔗 Ресурси</strong></td>
-        <td style="padding: 10px;">Корисні відео, статті та симулятори.</td>
-        <!-- Було links.md, стало links.html -->
-        <td style="padding: 10px;"><a href="resources/links.html">Додаткові матеріали</a></td>
-    </tr>
-</tbody>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px;"><strong>📖 Теорія</strong></td>
+                        <td style="padding: 10px;">Повний лекційний матеріал, архітектура ядра, процеси та пам'ять.</td>
+                        <td style="padding: 10px;"><a href="theory/main-content.html">Читати теорію</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px;"><strong>📚 Глосарій</strong></td>
+                        <td style="padding: 10px;">Ключові терміни (ядро, драйвер, переривання тощо).</td>
+                        <td style="padding: 10px;"><a href="theory/glossary.html">Дивитися терміни</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px;"><strong>💻 Практика</strong></td>
+                        <td style="padding: 10px;">Робота з Диспетчером завдань та Терміналом.</td>
+                        <td style="padding: 10px;"><a href="practice/tasks.html">Перейти до завдань</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px;"><strong>🔗 Ресурси</strong></td>
+                        <td style="padding: 10px;">Корисні відео, статті та симулятори.</td>
+                        <td style="padding: 10px;"><a href="resources/links.html">Додаткові матеріали</a></td>
+                    </tr>
+                </tbody>
             </table>
         </section>
 
         <hr>
 
-        <!-- ІНТЕРАКТИВНИЙ БЛОК 1: СИМУЛЯТОР CPU -->
+        <!-- ІНТЕРАКТИВНИЙ БЛОК: РОЗШИРЕНИЙ ТЕСТ -->
         <section class="interactive-box">
-            <h2>⚡ Демонстрація: Симулятор завантаження CPU</h2>
-            <p>Натисніть кнопку, щоб запустити віртуальний "важкий" процес в ОС та подивитися, як планувальник завдань реагує на перевантаження системи.</p>
-            <button onclick="simulateCpuLoad()">Запустити процес 🚀</button>
-            <div id="cpu-container">
-                <div id="cpu-progress"></div>
-            </div>
-        </section>
-
-        <!-- ІНТЕРАКТИВНИЙ БЛОК 2: ТЕСТ -->
-        <section class="interactive-box">
-            <h2>🧪 Міні-тест для самоперевірки</h2>
+            <h2>🧪 Інтерактивний тест для комплексної самоперевірки</h2>
+            <p style="margin-bottom: 25px;">Дайте відповіді на запитання нижче, щоб перевірити рівень засвоєння архітектурних принципів сучасних ОС.</p>
             
-            <div class="question-block" style="margin-bottom: 20px;">
+            <!-- Питання 1 -->
+            <div class="question-block">
                 <p><strong>Питання 1: Який компонент ОС безпосередньо взаємодіє з апаратним забезпеченням (залізом)?</strong></p>
                 <div class="options-group">
                     <button onclick="checkAnswer('q1', 'А', 'Б')">А) Командна оболонка (Shell)</button>
@@ -120,14 +110,48 @@
                 <div id="feedback-q1" class="feedback"></div>
             </div>
 
+            <!-- Питання 2 -->
             <div class="question-block">
-                <p><strong>Питання 2: Якщо оперативна пам'ять (RAM) повністю заповнена, що використовує ОС?</strong></p>
+                <p><strong>Питання 2: Якщо оперативна пам'ять (RAM) повністю заповнена, що використовує ОС для скидання неактивних сторінок?</strong></p>
                 <div class="options-group">
                     <button onclick="checkAnswer('q2', 'А', 'А')">А) Віртуальну пам'ять / Файл підкачки</button>
-                    <button onclick="checkAnswer('q2', 'Б', 'А')">Б) Кеш процесора</button>
-                    <button onclick="checkAnswer('q2', 'В', 'А')">В) Файлову систему NTFS</button>
+                    <button onclick="checkAnswer('q2', 'Б', 'А')">Б) Кеш-пам'ять процесора L1/L2</button>
+                    <button onclick="checkAnswer('q2', 'В', 'А')">В) Безпосередньо файлову систему FAT32</button>
                 </div>
                 <div id="feedback-q2" class="feedback"></div>
+            </div>
+
+            <!-- Питання 3 -->
+            <div class="question-block">
+                <p><strong>Питання 3: Як називається критична ситуація, коли два процеси заблоковані, оскільки кожен безкінечно очікує на ресурс, захоплений іншим?</strong></p>
+                <div class="options-group">
+                    <button onclick="checkAnswer('q3', 'А', 'В')">А) Фрагментація (Fragmentation)</button>
+                    <button onclick="checkAnswer('q3', 'Б', 'В')">Б) Переривання (Interrupt)</button>
+                    <button onclick="checkAnswer('q3', 'В', 'В')">В) Взаємне блокування (Deadlock)</button>
+                </div>
+                <div id="feedback-q3" class="feedback"></div>
+            </div>
+
+            <!-- Питання 4 -->
+            <div class="question-block">
+                <p><strong>Питання 4: Який алгоритм планувальника виділяє кожному процесу фіксований короткий квант часу (10-20 мс) за принципом каруселі?</strong></p>
+                <div class="options-group">
+                    <button onclick="checkAnswer('q4', 'А', 'Б')">А) FIFO (First-In, First-Out)</button>
+                    <button onclick="checkAnswer('q4', 'Б', 'Б')">Б) Round Robin</button>
+                    <button onclick="checkAnswer('q4', 'В', 'Б')">В) Пріоритетне планування</button>
+                </div>
+                <div id="feedback-q4" class="feedback"></div>
+            </div>
+
+            <!-- Питання 5 -->
+            <div class="question-block">
+                <p><strong>Питання 5: Яка головна перевага мікроядерної архітектури операційних систем порівняно з монолітною?</strong></p>
+                <div class="options-group">
+                    <button onclick="checkAnswer('q5', 'А', 'А')">А) Висока стабільність (збій у драйвері не обрушує всю ОС)</button>
+                    <button onclick="checkAnswer('q5', 'Б', 'А')">Б) Максимально можлива швидкість виконання команд</button>
+                    <button onclick="checkAnswer('q5', 'В', 'А')">В) Простіший та дешевший процес розробки</button>
+                </div>
+                <div id="feedback-q5" class="feedback"></div>
             </div>
         </section>
 
