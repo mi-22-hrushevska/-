@@ -9,7 +9,7 @@
 3. **Операційна система** (Ядро, драйвери, системні утиліти)
 4. **Апаратне забезпечення (Залізо)** (CPU, RAM, GPU, SSD)
 
-*(💡 Промпт для генерації схеми в ШІ: "Conceptual scheme of OS layers, UI, Kernel, Hardware, flat design, educational diagram")*
+![Архітектура рівнів операційної системи](../resources/images/Gemini_Generated_Image_ugku02ugku02ugku.png)
 
 ---
 
