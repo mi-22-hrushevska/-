@@ -3,11 +3,11 @@
 Щоб заглибитися в тему глибше, скористайтеся цими матеріалами:
 
 1. **🎬 Відеоматеріали:**
-   * ([How 0S works in 3D / Як працює ОС])[] — Візуалізація процесів на YouTube.
-   * [Crash Course Computer Science: Operating Systems] — Відомий англомовний курс від PBS з українськими субтитрами.
+   * [How 0S works in 3D / Як працює ОС]() — Візуалізація процесів на YouTube.
+   * [Crash Course Computer Science: Operating Systems](https://www.youtube.com/watch?v=O5nskjZ_GoI) — Відомий англомовний курс від PBS з українськими субтитрами.
 
 2. **📖 Корисні статті:**
-   * [Порівняння архітектури Windows та Linux] — стаття про відмінності монолітного та гібридного ядер.
+   * [Порівняння архітектури Windows та Linux](https://acode.com.ua/linux-vs-windows/) — стаття про відмінності монолітного та гібридного ядер.
 
 3. **🛠️ Інтерактивні симулятори:**
    * [CPU Scheduling Simulator](https://scheduling-algorithm-simulator.vercel.app/) — Веб-тренажер, що показує, як ядро розподіляє чергу процесів (FIFO, Round Robin).
