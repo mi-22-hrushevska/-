@@ -10,4 +10,4 @@
    * [Порівняння архітектури Windows та Linux] — стаття про відмінності монолітного та гібридного ядер.
 
 3. **🛠️ Інтерактивні симулятори:**
-   * (CPU Scheduling Simulator)[https://scheduling-algorithm-simulator.vercel.app/] — Веб-тренажер, що показує, як ядро розподіляє чергу процесів (FIFO, Round Robin).
+   * [CPU Scheduling Simulator](https://scheduling-algorithm-simulator.vercel.app/) — Веб-тренажер, що показує, як ядро розподіляє чергу процесів (FIFO, Round Robin).
